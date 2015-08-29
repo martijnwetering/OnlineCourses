@@ -1,0 +1,24 @@
+﻿@model OnlineCourses.Client.Models.SubscriptionViewModel
+
+@{
+    ViewBag.Title = "Subscribe";
+}
+
+<h2>Subscribe</h2>
+<div class="container">
+    @using (Html.BeginForm("Subscribe", "Subscription", FormMethod.Post))
+    {
+        @Html.TextBoxFor(s => s.FirstName)
+        @Html.TextBoxFor(s => s.LastName)
+        @Html.TextBoxFor(s => s.MiddleName)
+        @Html.TextBoxFor(s => s.Email)
+        @Html.TextBoxFor(s => s.BirthDate)
+        @Html.TextBoxFor(s => s.CourseName)
+        @Html.TextBoxFor(s => s.CourseId)
+
+        <input type="submit" value="Submit"/>
+
+    }
+
+    
+</div>

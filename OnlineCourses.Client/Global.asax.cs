@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Data.Entity;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
-using System.Web.Http;
+using OnlineCourses.Data;
+using OnlineCourses.Data.SampleData;
 
 namespace OnlineCourses.Client
 {
@@ -17,7 +16,12 @@ namespace OnlineCourses.Client
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            UnityWebActivator.Start();
+            //Database.SetInitializer<OnlineCoursesDbContext>(null);
+            
+            //var context = new OnlineCoursesDbContext();
+            //context.Database.Initialize(true); 
         }
     }
 }
